@@ -5,6 +5,7 @@ Uso:
     python validar_enderecos.py ENDERECO [ENDERECO ...]
     python validar_enderecos.py --arquivo lista.txt     (um por linha)
     python validar_enderecos.py --extrair texto.txt     (procura endereços num texto)
+    python validar_enderecos.py --rotulo "UrbanСrypto"  (só homóglifos, para nomes de entidade/tags)
 
 Cobertura:
   - TRON (T..., 34 caracteres): Base58Check, prefixo 0x41
@@ -158,6 +159,13 @@ def main():
     args = sys.argv[1:]
     if not args:
         sys.exit(__doc__)
+    if args[0] == "--rotulo":
+        falhou = False
+        for r in args[1:]:
+            h = homoglifos(r)
+            falhou |= bool(h)
+            print(f"{'ERRO' if h else 'OK '} | rótulo | {r} | {'; '.join(h) or 'só ASCII'}")
+        sys.exit(1 if falhou else 0)
     if args[0] == "--arquivo":
         enderecos = [l.strip() for l in open(args[1], encoding="utf-8") if l.strip()]
     elif args[0] == "--extrair":

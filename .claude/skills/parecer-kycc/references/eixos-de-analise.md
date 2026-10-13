@@ -4,6 +4,10 @@ Cada eixo traz o que conferir, onde costuma estar no dossiê e as armadilhas que
 em pareceres anteriores (BGX, Foxbit OTC, Parfin). A lista não é um formulário: um achado só vai
 para o parecer se mudar a leitura de risco, uma condicionante ou uma limitação.
 
+Todo percentual, score, limite ou valor citado no parecer leva a **peça de origem** (relatório,
+data, perfil). O que só foi dito em call ou e-mail entra como **declaração** ("segundo o sócio, na
+call de 06/10/2026"), nunca como parâmetro documentado.
+
 Marque cada dado como **[D]** (extraído de documento, com a peça identificável) ou **[E]**
 (estimativa sua, com a conta explicitada). Nunca produza um percentual ou valor sem base: se o
 relatório não traz denominador, diga que não foi possível estimar.
@@ -143,10 +147,30 @@ volume em USDT do relatório on-chain, KPI reports.
 
 ## 8. Carteiras e análise on-chain
 
-O Intex não refaz o screening: o analista que envia o dossiê já fez a triagem inicial (Crystal
-Intelligence) para afastar relação com ilícito. O parecer **lê** os relatórios recebidos e a
-declaração de carteiras, e responde: as carteiras são de quem se diz, o que os relatórios realmente
-dizem, e o que eles não cobrem.
+O analista do Intex faz a triagem inicial na Crystal Intelligence e manda os relatórios junto com o
+dossiê (Interactions, Connections, Transfers, Visualization/Address). O parecer **lê** esses
+relatórios, os da Trace e os do próprio cliente, e responde: as carteiras são de quem se diz, o que
+os relatórios realmente dizem, e o que eles não cobrem.
+
+**Diligência Crystal do Intex** (identifique pelo rodapé "Risk Score profile"):
+- O parâmetro do Intex é o perfil **"Intex - MA17.01 V1.0"**. Score calculado sob outro perfil (o do
+  cliente, o da Trace) **não é comparável**: diga sob qual perfil cada número foi gerado. No perfil do
+  Intex, "Exchange Unlicensed" e "P2P Exchange Unlicensed" valem 75% (alto), "Exchange Licensed" 10%,
+  "Sanctions", "Terrorism Financing", "Stolen Coins" e "Child Exploitation" 100%.
+- Separe o score que decorre do **tipo da entidade** (ex.: a própria PSAV classificada como
+  "Exchange Unlicensed") do que decorre de **exposição** a categorias de risco nas interações. O
+  primeiro é inerente ao regime de transição; o segundo é conduta.
+- Confira o **ativo** do relatório (cabeçalho "Assets" e `currency=` na URL do rodapé). Relatório
+  de entidade em TRX nativo não mostra as contrapartes do USDT, que costuma ser o fluxo principal.
+- Confira se as abas carregaram ("Looking for connections..." = vazio) e se a exportação de
+  Transfers foi **cortada** (~1.000 linhas): o período real pode ser bem menor que o filtro.
+- Use `scripts/crystal_transfers.py` para somar as transferências, achar o período coberto e projetar
+  o volume mensal [E]. A projeção é a melhor medida on-chain do **ritmo atual**; a média de toda a vida
+  da carteira costuma subestimá-lo.
+- Rótulos de entidade e tags são da base da ferramenta: rode os nomes pelo validador de homóglifos
+  (ex.: "UrbanСrypto" com C cirílico) e não os use, sozinhos, como prova de titularidade.
+- Protocolos de swap entre redes (Chainflip, THORChain), serviços de troca instantânea sem cadastro
+  (ChangeNOW e similares) e mixers entre as contrapartes são ponto de atenção para rastreio de origem.
 
 - **Validação formal**: rode `scripts/validar_enderecos.py` em todos os endereços (Base58Check,
   EIP-55, homóglifos) e confira que coincidem caractere a caractere entre atestado, KYB, relatórios e

@@ -52,8 +52,11 @@ carteiras e on-chain, programa de PLD/FT, background, integridade documental e c
   relatórios de background de centenas de páginas), procure o que importa: versão e data,
   periodicidade de revisão, normas citadas, processos e sua natureza.
 - Rode `scripts/validar_enderecos.py` em todos os endereços de carteira.
-- O screening on-chain (Crystal Intelligence) é feito pelo analista que envia o dossiê. Você **lê**
-  os relatórios; não precisa refazê-lo.
+- O screening on-chain (Crystal Intelligence) é feito pelo analista do Intex, que manda os
+  relatórios. Você **lê** esses relatórios e os da Trace e do cliente; não precisa refazer o
+  screening. Na Crystal, o parâmetro é o perfil "Intex - MA17.01 V1.0": score gerado sob outro perfil
+  não é comparável (veja o eixo 8). Se os relatórios do Intex não vierem, diga que a diligência
+  on-chain própria não foi recebida e peça ao usuário.
 - Confira datas e artigos em `references/normas.md` e verifique se há norma nova posterior à data
   daquele arquivo antes de citar um prazo.
 
