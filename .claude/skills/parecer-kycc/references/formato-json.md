@@ -5,15 +5,15 @@
 
 ```json
 {
-  "numero": "PAR-AVD-KYCC-20261013-001",
-  "objeto_curto": "Urban",
+  "numero": "PAR-AVD-KYCC-AAAAMMDD-NNN",
+  "objeto_curto": "<Objeto>",
   "titulo": "PARECER DE DILIGÊNCIA COMPLEMENTAR (KYCC)",
   "subtitulo": "Razão social (marca) — uma linha que diga o que esta versão é",
   "ficha": [["Rótulo", "valor com **negrito**"], ...],
   "secoes": [
     {"titulo": "1. Enquadramento", "blocos": [ ...blocos... ]}
   ],
-  "local_data": "São Paulo, 13 de outubro de 2026.",
+  "local_data": "São Paulo, <dia> de <mês> de <ano>.",
   "assinatura": {"nome": "...", "cargo": "...", "instituicao": "..."},
   "pendencias": { ... }
 }
@@ -53,7 +53,7 @@ Se presente, o script grava `<saida>_pendencias.md`, um e-mail pronto para a Tra
 
 ```json
 "pendencias": {
-  "assunto": "Diligência complementar Urban — documentos e esclarecimentos",
+  "assunto": "Diligência complementar <Objeto> — documentos e esclarecimentos",
   "saudacao": "Prezados, boa tarde.",
   "abertura": "Uma ou duas frases: o que foi analisado e qual a situação do fluxo.",
   "grupos": [

@@ -98,6 +98,9 @@ Pontos fixos (confira o texto e os artigos em `normas.md`):
   matriz/filial, objeto social, administradores.
 - QSA × cap table × contrato: participações coincidem? Beneficiário final por participação (corte de
   25%) e por controle, inclusive em holdings e no exterior.
+- **Histórico de outra gestão**: CNPJ antigo, razões sociais anteriores e entregas fiscais desde
+  anos atrás podem pertencer a controladores anteriores. Confira se o *track record* invocado é da
+  gestão atual (data de entrada dos sócios, compra de quotas).
 - Organograma não oficial/não assinado: válido para fins declaratórios, registre.
 - **Acumulação de funções**: sócio relevante que também é administrador e CCO/Diretor de
   Compliance; ou compliance terceirizado a escritório ligado a sócio. Não é vedado, mas reduz a
@@ -118,6 +121,9 @@ Pontos fixos (confira o texto e os artigos em `normas.md`):
   vale hoje para o Intex é se a entidade tem capacidade financeira compatível com o volume declarado.
 - PL negativo ou capital irrisório com volume alto: o limite não pode ser calibrado por capacidade
   própria; se houver suporte intragrupo, peça a evidência.
+- Quadro de pessoal: compare colaboradores declarados com vínculos em background (ex.: "sem
+  vínculos" na BigDataCorp) e despesa de pessoal na DRE; estrutura de compliance declarada precisa
+  de gente que a execute.
 - Take rate (receita ÷ volume) atípico para o modelo declarado é sinal a explorar [E].
 
 ## 7. Volume (TPV declarado x observado)
@@ -126,6 +132,8 @@ Monte uma tabela Fonte | Valor | Leitura com todas as medidas disponíveis: TPV 
 bancários (entradas e saídas), extrato de exchange, balancete (débitos em ativos de terceiros),
 volume em USDT do relatório on-chain, KPI reports.
 
+- Declarações públicas (CV, site, imprensa, pitch) entram na tabela como [D] de baixa
+  confiabilidade, nunca como corroboração.
 - Converta moedas com a taxa e a data explícitas, marcando [E].
 - Volume observado **maior** que o declarado é compatível com intermediação, mas impede calibrar
   limite: peça recalibragem. Volume declarado como **projeção** sem lastro: aceite só o patamar
@@ -173,7 +181,10 @@ dizem, e o que eles não cobrem.
   parceiros)? Parâmetros de seleção e monitoramento definidos?
 - **Ferramentas**: KYC/KYB, screening (sanções/PEP/mídia), KYT on-chain, monitoramento
   transacional em moeda fiduciária. Atenção: **KYT on-chain não é monitoramento transacional
-  fiduciário.** Contrato com fornecedor prova contratação, não uso.
+  fiduciário.** Contrato com fornecedor prova contratação, não uso; e confira se o **módulo
+  alegado** (ex.: Travel Rule) está de fato no contrato.
+- **Independência das ferramentas**: ferramenta de compliance fundada por sócio ou parte
+  relacionada (ex.: base de endereços de risco própria) reduz a independência do controle.
 - **Evidência de execução**: exemplos de CDD com dupla alçada, alertas tratados, dossiês,
   comunicações ao COAF; monitoramento contínuo ativo nos exemplos. Exemplo com campos vazios ou em
   ambiente de teste ("sandbox", "preview") é achado.
@@ -193,6 +204,10 @@ dizem, e o que eles não cobrem.
 
 ## 11. Integridade documental
 
+Peças da origem às vezes trazem dados de **outros clientes da Trace** (cartões de Pipefy, listas):
+desconsidere-os e registre isso em Limitações.
+
+
 Confira e registre num único achado: datas incoerentes (documento datado depois do nome do
 arquivo, "30/12/1899"), texto-modelo não preenchido, assinaturas faltantes ou por um só
 administrador, CNPJs divergentes entre peças, CRC sem UF, documentos em papel timbrado de outra
@@ -204,4 +219,6 @@ empresa, prints sem identificação de titular.
   call): algum foi apenado por operar com intermediador não autorizado (ex.: Banco Topázio, Copas,
   11/05/2026)? O padrão de exposição é o mesmo?
 - Exchange estrangeira concentrando custódia e execução.
+- Relação anterior entre a PSAV e o analisado: KYT, transações ou screening com data anterior ao
+  onboarding podem indicar operação antes da aprovação. Pergunte.
 - Clientes do cliente que sejam PSAVs (modelos B2B/B2B2C): a cadeia se alonga.

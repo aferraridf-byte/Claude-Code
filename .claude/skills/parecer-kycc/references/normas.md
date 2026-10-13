@@ -42,11 +42,18 @@ a versão; não invente.
 - **I**: solicitar autorização no prazo máximo de **270 dias** da entrada em vigor →
   **30/10/2026** (contagem; a data não está escrita no texto).
 - **§ 6º**: quem protocolar a tempo pode manter a prestação dos serviços até a conclusão do processo
-  de autorização.
+  de autorização, "**sendo vedada a assunção de outra modalidade nesse período**" (trecho transcrito numa conferência
+  de 13/10/2026, ainda não reconferido; confirme antes de citar entre aspas). Uso: confira se
+  as atividades efetivamente exercidas (custódia de terceiros, intermediação, VaaS, câmbio) cabem
+  na modalidade que será pedida; atividade fora dela fica descoberta depois do protocolo.
 - **§ 7º**: quem não protocolar tempestivamente deve **cessar a prestação em até 30 dias** após o
   fim do prazo.
 - **Indeferimento ou arquivamento** sem recurso: cessar em 30 dias da notificação — **Res. BCB 519,
   art. 18** (não é a 520).
+- **II**: o que deve ser comprovado na transição (inclui, entre outros, a observância da
+  regulamentação de PLD/FT, na alínea "c", e dos procedimentos da Lei 13.810/2019, na alínea "d").
+  **III**: envio de informações a partir do protocolo (saldos de clientes, custódia, provas de
+  reservas; alíneas "b" a "e" com nova redação a partir de 01/01/2027, Res. BCB 589/2026).
 - Na transição, o art. 88, II, exige, entre outros, observância da regulamentação de PLD/FT (alínea
   "c") e dos procedimentos da Lei 13.810/2019 (alínea "d").
 
@@ -135,3 +142,10 @@ peça a DeCripto.
 ## Lei nº 14.478/2022
 Diretrizes para a prestação de serviços de ativos virtuais e regulamentação das PSAV; incluiu as PSAV
 na Lei 7.492/1986 e na Lei 9.613/1998 e criou o art. 171-A do Código Penal.
+
+## A conferir (vistas só em fonte secundária; confirme no texto oficial antes de citar)
+- Res. BCB 552/2026 e 553/2026: governança das SPSAV.
+- IN BCB 739/2026: relatório de asseguração razoável por auditor independente.
+- Res. BCB 561/2026: vedação a eFX de liquidar pagamentos internacionais com criptoativos a partir de
+  01/10/2026.
+Ao confirmar alguma, mova-a para a seção própria e registre a data da conferência.

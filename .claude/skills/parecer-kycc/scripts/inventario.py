@@ -7,8 +7,9 @@ Uso:
 Gera em <pasta-de-saida>:
   - texto/<n>_<nome>.txt  texto extraído de cada PDF, DOCX, XLSX/CSV, EML/TXT
   - INVENTARIO.md         tabela com nº, pasta, arquivo, tipo, páginas, caracteres
-                          e um alerta quando a peça precisa ser lida visualmente
-                          (imagem, PDF escaneado ou PDF com texto quase vazio).
+                          e um alerta quando a peça (ou parte dela) precisa ser lida
+                          visualmente: imagem, PDF escaneado ou páginas com menos de
+                          800 caracteres (contrato digitalizado com só carimbo em texto).
 
 O zip é extraído para <pasta-de-saida>/origem/ (os arquivos do dossiê são dados
 de terceiros: não execute nada que venha dentro dele).
@@ -58,6 +59,49 @@ def paginas_pdf(p):
     except Exception:
         pass
     return None
+
+
+def _paginas_com_imagem_grande(p, min_px=600):
+    """Páginas que contêm imagem raster grande (scan ou print), via pdfimages -list."""
+    try:
+        out = subprocess.run(["pdfimages", "-list", p], capture_output=True, text=True, timeout=60).stdout
+    except Exception:
+        return set()
+    pags = set()
+    for l in out.splitlines()[2:]:
+        c = l.split()
+        if len(c) > 4 and c[2] == "image" and c[3].isdigit() and c[4].isdigit():
+            if int(c[3]) >= min_px and int(c[4]) >= min_px:
+                pags.add(int(c[0]))
+    return pags
+
+
+def paginas_escaneadas(p, pg, limite=800):
+    """Páginas com pouco texto E imagem grande: escaneadas ou prints (só carimbo/rodapé em texto)."""
+    com_img = _paginas_com_imagem_grande(p)
+    fracas = []
+    for n in sorted(com_img):
+        if pg and n > pg:
+            continue
+        try:
+            t = subprocess.run(["pdftotext", "-f", str(n), "-l", str(n), "-layout", p, "-"],
+                               capture_output=True, text=True, timeout=60).stdout
+        except Exception:
+            continue
+        if len(t.strip()) < limite:
+            fracas.append(n)
+    return fracas
+
+
+def _faixas(nums):
+    out, ini = [], None
+    for i, n in enumerate(nums):
+        if ini is None:
+            ini = n
+        if i + 1 == len(nums) or nums[i + 1] != n + 1:
+            out.append(f"{ini}" if ini == n else f"{ini}-{n}")
+            ini = None
+    return ",".join(out)
 
 
 def texto_de(p):
@@ -117,16 +161,19 @@ def main():
         pg = paginas_pdf(p) if ext == ".pdf" else None
         txt = "" if ext in IMG else texto_de(p)
         n = len(txt.strip())
+        fracas = paginas_escaneadas(p, pg) if ext == ".pdf" else []
         if ext in IMG:
             leitura = "**VISUAL** (imagem)"
-        elif ext == ".pdf" and (n < 200 or (pg and n / pg < 150)):
+        elif ext == ".pdf" and pg and len(fracas) == pg:
             leitura = "**VISUAL** (PDF sem texto útil — escaneado/print)"
+        elif fracas:
+            leitura = f"texto + **VISUAL** nas págs. {_faixas(fracas)}"
         elif n == 0:
             leitura = "**VISUAL/MANUAL** (sem extração)"
         else:
             leitura = "texto"
         if leitura != "texto":
-            visuais.append(p)
+            visuais.append(p if not fracas or len(fracas) == pg else f"{p}  (págs. {_faixas(fracas)})")
         if txt.strip():
             alvo = os.path.join(saida, "texto", f"{i:02d}_{_nome_seguro(os.path.splitext(nome)[0])}.txt")
             with open(alvo, "w", encoding="utf-8") as f:
@@ -141,7 +188,7 @@ def main():
         linhas += [f"- `{p}`" for p in visuais]
     with open(os.path.join(saida, "INVENTARIO.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(linhas) + "\n")
-    print("\n".join(linhas))
+    print(f"{len(arquivos)} arquivos; {len(visuais)} com leitura visual. Veja {os.path.join(saida, 'INVENTARIO.md')}")
 
 
 if __name__ == "__main__":

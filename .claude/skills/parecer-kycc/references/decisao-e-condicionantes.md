@@ -55,6 +55,13 @@ Regras:
   impede (política vencida com nova versão anunciada, DF auditada prevista) vai como AC com prazo.
 - Na tabela de achados, a coluna "Encaminhamento" aponta o código (S2, AC1 · G4, "Registro", "Sem
   providência").
+- **Horizonte curto.** Se o marco regulatório estiver mais perto que o prazo padrão de AC (60
+  dias), priorize as S, encurte os prazos e diga no resumo e ao usuário que a liberação pode durar
+  poucos dias. Não deixe AC vencer depois do marco que pode encerrar o fluxo.
+- **Art. 91 depois de 06/11/2026.** Enquanto o Intex não fixar sua leitura (ver `normas.md`), use
+  uma T própria: "suspensão automática em 06/11/2026, salvo autorização do analisado ou manifestação
+  escrita do Intex admitindo a continuidade com o pedido em análise". Ela depende de decisão interna
+  do Intex, não de entrega da Trace: diga isso no texto e na resposta ao usuário.
 - Quando um item muda a data (ex.: BCB prorroga o prazo), a condicionante temporal se desloca junto,
   sem reabrir as demais; escreva isso.
 
