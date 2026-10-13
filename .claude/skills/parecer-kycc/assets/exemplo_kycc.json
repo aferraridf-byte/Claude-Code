@@ -1,0 +1,129 @@
+{
+  "numero": "PAR-AVD-KYCC-20260924-003",
+  "objeto_curto": "Alfa",
+  "titulo": "PARECER DE DILIGÊNCIA COMPLEMENTAR (KYCC)",
+  "subtitulo": "Alfa Serviços Digitais Ltda. (marca Alfa) — versão consolidada, com o encerramento da condicionante suspensiva",
+  "ficha": [
+    ["Cliente do Intex", "Trace Finance — PSAV contratante do provimento de liquidez (análise principal em processo próprio)"],
+    ["Objeto", "ALFA SERVIÇOS DIGITAIS LTDA. (\"Alfa\"), CNPJ 00.000.000/0001-00 — **cliente da Trace, não do Intex**"],
+    ["Natureza", "Diligência complementar de segundo grau (KYCC). Não é onboarding."],
+    ["Nº do parecer", "PAR-AVD-KYCC-20260924-003 — consolida e substitui os pareceres 20260915-001 e 20260923-002"],
+    ["Data", "24/09/2026"],
+    ["Classificação", "**ALTO** (Intex)  |  origem Trace: MÉDIO (Background Check de 15/09/2026, sem score numérico)"]
+  ],
+  "secoes": [
+    {
+      "titulo": "1. Enquadramento",
+      "blocos": [
+        {"p": "A cadeia examinada tem três elos. O **Intex Bank** atua como provedor de liquidez, por conta própria (art. 2º, XIV, e art. 38 da Res. BCB 520/2025). A **Trace Finance** é a PSAV que contrata esse provimento: é o cliente do Intex, e sobre ela recai a análise principal (KYB, classificação e monitoramento), conduzida em processo próprio. A **Alfa** é cliente da Trace e **não é cliente do Intex**."},
+        {"p": "Este documento é uma camada adicional de verificação sobre a carteira de clientes da contraparte. Decorre da abordagem baseada em risco e do dever de diligência em cadeia. Ele **não cria relação contratual** com a Alfa. **Não substitui nem convalida** o KYB conduzido pela Trace. **Não transfere ao Intex** a responsabilidade pelo monitoramento daquele relacionamento. **Não é onboarding.** Seus efeitos se limitam a uma decisão: se o Intex aceita, e em que condições, que a liquidez que provê à Trace sirva ao fluxo da Alfa."},
+        {"p": "Esta versão consolida os pareceres de 15/09 e 23/09/2026 e incorpora: a resposta da Alfa sobre as carteiras declaradas e as evidências das carteiras em autocustódia (23/09/2026); e a **Declaração de Wallets** firmada pelo signatário da companhia em 24/09/2026, que encerra a condicionante suspensiva."}
+      ]
+    },
+    {
+      "titulo": "2. Resumo das conclusões",
+      "blocos": [
+        {"veredito": {
+          "titulo": "VEREDITO: NÃO OBJEÇÃO CONDICIONADA — S1 CUMPRIDA, FLUXO LIBERADO",
+          "texto": "A condicionante suspensiva S1 foi **integralmente atendida** em 24/09/2026, com a entrega das evidências das carteiras em autocustódia e da declaração firmada pelo signatário da companhia. **O fluxo está liberado**, sujeito à condicionante temporal e ao acompanhamento abaixo. Risco residual **ALTO**, divergente do MÉDIO atribuído pela Trace. Marco duro em **30/10/2026** (arts. 88 e 91 da Res. BCB 520/2025)."
+        }},
+        {"bullets": [
+          "**A condicionante suspensiva foi cumprida.** As evidências das carteiras em autocustódia foram recebidas e validadas, e a Declaração de Wallets de 24/09/2026 veio assinada pelo mesmo signatário do wallet attestation, com identificador de assinatura coincidente (A1).",
+          "**Quatro dos oito endereços não são carteiras da Alfa.** São endereços de saque da exchange, compartilhados entre usuários, sem chave privada nem escolha do endereço de origem. A declaração é compatível com o screening que temos, que os atribui à binance.com. Eles saem do perímetro de atribuição de fluxo; a autocustódia efetiva está apenas nas duas carteiras Utila (A1 e A11).",
+          "**O screening das carteiras informa pouco.** Seis dos oito endereços estão hospedados em VASP e não geram dados de exposição. As duas carteiras Utila foram triadas uma única vez, em 14/09/2026 (A2).",
+          "**A situação regulatória segue frágil.** A Alfa não é autorizada e opera no regime de transição. O protocolo está previsto para 15/10/2026, a 15 dias do marco. O CNAE registrado é de correspondente de instituição financeira, o modelo de negócio aparece descrito de três formas e o patrimônio líquido fica muito abaixo do capital referencial divulgado pelo BCB (A3).",
+          "**Volume declarado e volume observado não se reconciliam.** O TPV declarado é de US$ 80 mi/mês. A Binance registra cerca de US$ 123 mi/mês **em cada sentido** (jun/2026). Com essa divergência, não há como calibrar limite de monitoramento (A4).",
+          "**Acumulação de funções na contraparte.** O signatário figura simultaneamente como sócio relevante da holding, administrador e Diretor e Chief Compliance Officer. Não é vedado, mas reduz a independência da função de compliance e é ponto sensível no pedido de autorização (A13).",
+          "**Risco de perfil e risco de conduta.** O risco de perfil é **ALTO**: PSAV não autorizada, pagamentos internacionais com stablecoins, alto volume e custódia operacional em exchange estrangeira. O risco de conduta apurado é **MÉDIO**: há imprecisões declaratórias e lacunas documentais, esclarecidas quando questionadas, e **nenhum indício de ilicitude** foi identificado."
+        ]}
+      ]
+    },
+    {
+      "titulo": "3. Achados relevantes",
+      "blocos": [
+        {"tabela": {
+          "legenda": "Legenda: [D] indica dado extraído de documento; [E] indica estimativa deste parecer.",
+          "colunas": [["#", 480], ["Achado", 1900], ["Leitura", 6126], ["Encaminhamento", 1700]],
+          "linhas": [
+            ["A1", "Custódia das carteiras declaradas. [D]", "Esclarecido e formalizado. A Declaração de Wallets de 24/09/26, assinada por [signatário], registra que os quatro endereços Tron são hot wallets sob controle operacional da exchange, usadas no processamento de saques de seus usuários, sem que a Alfa detenha as chaves ou escolha o endereço de origem. Compatível com o screening, que os atribui à binance.com. Permanece que as duas carteiras de tesouraria declaradas como self-custody são endereços de depósito na exchange: a autocustódia efetiva está apenas nas duas carteiras Utila. Ver 3.1.", "S1 encerrada; AC3"],
+            ["A11", "Atribuição de fluxo. [D]/[E]", "O attestation registra a custódia (própria ou de terceiro), mas não distingue endereço de atribuição exclusiva à conta da Alfa de endereço em pool compartilhado da exchange. Apenas os primeiros servem de âncora de atribuição. Quanto aos compartilhados, a relação não é estável nem exaustiva: saques futuros podem partir de endereços diversos. Ver 3.1.", "Registro; AC3"],
+            ["A2", "Screening: 8/8 \"Low\". [D]", "Seis endereços estão em VASP, sem dados de exposição. As duas carteiras Utila foram triadas uma única vez (14/09/26). Ver 3.1.", "Registro"],
+            ["A12", "Carteira em autocustódia não declarada. [D]", "O painel apresentado no anexo do attestation indica, no mesmo cofre, uma segunda carteira (\"Hot Wallet 1\", 2 endereços) e a rede Base para o endereço EVM declarado, nenhuma delas no attestation. São endereços sob controle efetivo da Alfa, nunca triados.", "AC3 · G4"],
+            ["A13", "Acumulação de funções. [D]", "O signatário da Declaração de Wallets assina como Diretor e Chief Compliance Officer e é, também, administrador da Alfa e detentor de 46,34% da holding. A acumulação não é vedada, mas reduz a independência da segunda linha de defesa e tende a ser objeto de exigência no processo de autorização como corretora.", "AC2 · G7"],
+            ["A3", "Autorização, modelo de negócio e capital. [D]/[E]", "A Alfa está no regime de transição, com protocolo previsto para 15/10/26. O CNAE é 6619-3/02. O modelo é descrito de formas divergentes. O PL informado pela Trace é de R$ 1,26 mi, contra o referencial de R$ 10,8 a 37,2 mi. Ver 3.2.", "T1 · G1 a G2"],
+            ["A4", "TPV de US$ 80 mi/mês. [D]", "O fluxo observado é cerca de 1,5 vez o declarado. A reconciliação feita pela Trace tem falhas de método. Ver 3.3.", "AC1 · G6"],
+            ["A5", "Demonstrações financeiras. [D]", "O balancete recebido é de abr/2025, não auditado, e só um dos três administradores assinou (Clicksign de 25/11/25). Há saldos com natureza invertida (Fornecedores devedor; Títulos a receber credor; Outras despesas credor) e não há grupo de PL. Não aparecem despesas de pessoal [E]. A receita de jan–mar no balancete (R$ 752,5 mil) diverge da declaração de faturamento (R$ 668,8 mil), uma diferença de R$ 83,7 mil. Ativos de terceiros estão lançados no ativo próprio, o que levanta dúvida sobre a segregação patrimonial.", "AC1"],
+            ["A6", "Estrutura societária e beneficiário final. [D]/[E]", "O critério é participação (corte de 25% na política). O organograma não é documento oficial, vem em papel timbrado de outra empresa e não está assinado, mas para fins declaratórios é válido.", "G7"],
+            ["A7", "Vigência da Política PLD/FT/PAM. [D]", "É a versão 001, de set/2025, com revisão anual, portanto vence agora. Cita \"Resolução Bacen 3.978\" (o correto é Circular BCB 3.978/2020). Não cita a Lei 14.478/2022, as Res. BCB 519/520/521 nem a Res. BCB 44/2020. Não tem parâmetros de seleção nem evidência de aprovação pelo Comitê.", "AC2"],
+            ["A8", "Evidência de execução. [D]", "O Intex não recebeu evidência operacional: nem as evidências de ferramentas, nem os manuais, nem exemplos de CDD. A TRM Labs, apresentada como ferramenta de \"monitoramento transacional\", é KYT on-chain e não monitora o comportamento transacional em moeda fiduciária.", "AC2"],
+            ["A9", "Background dos administradores. [D]", "Os processos são cíveis, de consumo e arquivados. Há um JECRIM arquivado ([administrador 2]) e uma execução da OAB/RJ por anuidades ([signatário]). Não há PEP, sanção ou mídia adversa, segundo a Trace; os relatórios-fonte não foram compartilhados.", "Sem providência"],
+            ["A10", "Integridade documental. [D]", "Os checksums de todos os endereços (Base58Check e EIP-55) são válidos, sem homóglifos, e os endereços coincidem entre attestation, KYB, relatórios de screening e a declaração de 23/09/26. Inconsistências menores: o attestation foi datado em 10/09/26 mas o arquivo se chama \"20260603\"; o anexo de evidências mantém o texto-modelo; a declaração de faturamento traz \"Data de Registro 30/12/1899\"; o CRC aparece sem UF no balancete.", "Registro"]
+          ]
+        }},
+        {"sub": "3.1 Carteiras: custódia, atribuição e alcance do screening (A1, A2, A11 e A12)"},
+        {"p": "**Fatos.** O attestation de 10/09/2026 declara 8 endereços como carteiras da companhia: 4 de tesouraria (2 como self-custody e 2 sob custódia da Utila) e 4 hot wallets sob custódia da Binance. Em resposta à S1, a Alfa encaminhou, em 23/09/2026, as evidências das duas carteiras Utila e, em 24/09/2026, a **Declaração de Wallets** firmada por [signatário]: os ativos da Alfa permanecem alocados em sua conta na exchange, a instrução de saque parte dessa conta e a exchange executa a transferência a partir de uma de suas próprias hot wallets, escolhida por sua infraestrutura. O quadro resultante é este:"},
+        {"tabela": {
+          "colunas": [["Endereço", 3000], ["Natureza apurada", 2200], ["Efeito", 5006]],
+          "linhas": [
+            ["T...(1) · 0x...(1) (Utila)", "Autocustódia efetiva da Alfa", "Carteiras da Alfa. Evidência recebida e validada. Triagem única em 14/09/26, sem monitoramento contínuo."],
+            ["T...(2) · 0x...(2) (declaradas como self-custody)", "Endereços de depósito atribuídos à conta da Alfa na exchange (ID [conta])", "Atribuíveis à Alfa. Servem de âncora de atribuição. Não são autocustódia."],
+            ["T...(3) a T...(6)", "Endereços de saque da exchange, em pool compartilhado", "Não são carteiras da Alfa. Fora do perímetro de atribuição. Relação não exaustiva."]
+          ]
+        }},
+        {"p": "**Atenuação.** A explicação é tecnicamente correta e **corroborada de forma independente**: os relatórios de screening atribuem os quatro endereços à binance.com e os classificam como Exchange, que é precisamente o resultado esperado para endereço operado pela corretora. Exigir prova de titularidade sobre endereço de saque de terceiro seria exigir o impossível. A declaração veio **na origem e assinada** pelo mesmo signatário do wallet attestation, com identificador de assinatura eletrônica coincidente entre os dois documentos, e os quatro endereços nela relacionados conferem, caractere a caractere, com o attestation e com os relatórios de screening. Não há exposição direta nem indireta a categoria sancionada ou severa em nenhum dos oito endereços."},
+        {"p": "**Agravamento.** O esclarecimento reduz o alcance do attestation: das oito carteiras nele declaradas como sendo da companhia, quatro são infraestrutura de terceiro. Um endereço em pool compartilhado **não é âncora de atribuição** — o que dele sai é fluxo da exchange para qualquer usuário — e, como a Alfa não escolhe o endereço de saída, a relação declarada **não é estável nem exaustiva**. Some-se que o resultado \"Low\" em seis dos oito endereços é ausência de dado, e não evidência de baixo risco, porque endereço hospedado em VASP não gera exposição: a contraparte real desses fluxos não é visível. As duas carteiras efetivamente controladas pela Alfa foram triadas uma única vez, na véspera do KYB, e o painel apresentado revela ainda uma segunda carteira e uma rede adicional que não constam do attestation."},
+        {"sub": "3.2 Situação regulatória, modelo de negócio e contrapartes (A3)"},
+        {"p": "**Fatos.** A Alfa não é autorizada pelo BCB. Declara operar no regime de transição e pretende protocolar, até **15/10/2026**, pedido na modalidade **corretora**, com assessoria do [escritório] e sob o mesmo CNPJ. As PSAVs em atividade em 02/02/2026 têm **270 dias, até 30/10/2026**, para protocolar (art. 88 da Res. BCB 520/2025). Quem perder o prazo deve **cessar a atividade em até 30 dias**. A partir de **30/10/2026**, o art. 91 **veda às instituições autorizadas**, o Intex entre elas, operar com contraparte que presta serviços de ativos virtuais sem estar autorizada ou em processo de autorização. A comprovação de atividade anterior a fev/2026 veio por dois recibos da IN RFB 1.888 (07/2024 e 01/2025), que não foram compartilhados com o Intex. A IN 1.888 foi sucedida pela IN RFB 2.291/2025 (DeCripto), vigente desde 01/07/2026."},
+        {"p": "**Atenuação.** Há intenção declarada, com modalidade, escritório, CNPJ e data definidos. O pedido anterior a 30/10 mantém a Alfa regular durante a Fase 1. A cadeia passa pela Trace, que é PSAV. Não identifiquei prazo já perdido."},
+        {"p": "**Agravamento.** A margem entre o protocolo previsto e o marco é de **15 dias**. O CNPJ tem como atividade principal o CNAE **6619-3/02 (correspondentes de instituições financeiras)**, sem atividade específica de ativos virtuais. O modelo de negócio aparece descrito de três formas: corretagem OTC para PF e PJ (KYB), pagamentos internacionais com stablecoins e provisão de liquidez B2B (e-mail de 09/09), e serviços de pagamento (política). Pagamentos internacionais com ativos virtuais entram no perímetro cambial (Res. BCB 521/2025). O PL informado pela Trace (R$ 1,26 mi, não verificado) está **muito abaixo** do referencial de R$ 10,8 a 37,2 mi divulgado pelo BCB (Res. Conjunta 14/2025 e Res. BCB 517/2025); a apuração efetiva e eventual gradualismo dependem das atividades exercidas [E]. O balancete mostra como contrapartes de ativos de terceiros **Braza, Banco Topázio, Block River, Enor e Conduit**, nenhuma diligenciada no KYB. O Topázio foi apenado pelo Copas em 11/05/2026 por câmbio para ativos virtuais com cliente intermediador não autorizado. Não há indicação de que a Alfa tenha figurado naquele processo, mas o **padrão de exposição é o mesmo** que o precedente sancionou, e ele recai sobre a instituição autorizada. A resposta de 23/09 confirma, ainda, que a custódia operacional e a execução dos saques a clientes ocorrem integralmente na exchange."},
+        {"sub": "3.3 Volume declarado x observado (A4)"},
+        {"tabela": {
+          "colunas": [["Fonte", 3900], ["Valor", 3100], ["Leitura", 3206]],
+          "linhas": [
+            ["TPV declarado (cadastro)", "US$ 80 mi/mês [D]", "Referência"],
+            ["Binance, jun/2026 (extrato não recebido; números da Trace)", "Depósitos de US$ 124,81 mi; saques de US$ 122,44 mi [D]", "~US$ 123 mi/mês por sentido, ~1,5x o TPV [E]"],
+            ["Balancete de abr/2025: débitos em ativos de terceiros", "R$ 371,7 mi [D]", "~US$ 64 mi/mês, com câmbio ~5,8 [E]"],
+            ["Receita de abr/2025 sobre débitos do mês", "R$ 43,5 mil / R$ 371,7 mi [D]", "Take rate de ~0,012% [E], atípico para intermediação"]
+          ]
+        }},
+        {"p": "**Atenuação.** A divergência vai no sentido de volume observado **maior** que o declarado, o que é compatível com a atividade de intermediação e não indica, por si, má-fé. **Agravamento.** Com o volume real cerca de 50% acima do declarado, o limite de monitoramento não é calibrável nos parâmetros atuais."}
+      ]
+    },
+    {
+      "titulo": "4. Condicionantes",
+      "blocos": [
+        {"sub": "4.1 Suspensivas (antes da liberação de fluxo)"},
+        {"p": "**S1 — atendida e encerrada em 24/09/2026.** As evidências das carteiras em autocustódia foram recebidas e validadas, e a natureza dos endereços de saque da exchange foi formalizada por declaração firmada pelo signatário da companhia, dentro do prazo estabelecido. Não subsiste óbice suspensivo à liberação do fluxo."},
+        {"p": "**T1 — condicionante temporal.** Comprovante de protocolo do pedido de autorização no BCB **até 30/10/2026**. Na falta dele, o fluxo é **suspenso automaticamente** (arts. 88 e 91 da Res. BCB 520/2025)."},
+        {"sub": "4.2 Acompanhamento (sem efeito suspensivo, até 30/11/2026)"},
+        {"bullets": [
+          "**AC1.** Revisão do TPV declarado à luz do volume observado e recalibragem, pela Trace, dos limites de monitoramento, frente ao envio de balancete auditado.",
+          "**AC2.** Política de PLD/FT/PAM revisada, com arcabouço normativo atualizado e parâmetros de seleção; envio do manual de monitoramento, da AIR e de evidências de execução (exemplos de CDD, alertas tratados, dossiês).",
+          "**AC3.** Na próxima atualização do wallet attestation: declaração da carteira em autocustódia e da rede adicional hoje não declaradas, e segregação dos endereços entre atribuição exclusiva à conta da Alfa e pool compartilhado da exchange, com menção de que a relação destes últimos não é exaustiva."
+        ]},
+        {"sub": "4.3 Gatilhos de reavaliação imediata"},
+        {"p": "**G1.** Protocolo não comprovado até 30/10/2026. **G2.** Indeferimento, arquivamento ou exigência do BCB que afete a continuidade. **G3.** Exposição direta ou indireta a categoria sancionada ou severa em qualquer carteira. **G4.** Uso, na cadeia de entrega, de endereço sob controle da Alfa não declarado — inclusive os identificados no painel de autocustódia e ainda não atestados. **G5.** Mídia adversa ou processo sancionador envolvendo a Alfa, seus sócios ou suas contrapartes de liquidez. **G6.** Volume observado acima de 150% do TPV recalibrado. **G7.** Alteração de controle ou de administração."}
+      ]
+    },
+    {
+      "titulo": "5. Limitações",
+      "blocos": [
+        {"p": "Este parecer se baseia no conjunto recebido pelo Intex em 15/09/2026 e nos complementos encaminhados pela Trace em 23 e 24/09/2026. **Não foram disponibilizados:** o balancete anual de 2025 citado pela Trace (os números anuais não foram verificados), o extrato da Binance, os recibos da IN 1.888, os manuais, as evidências de ferramentas e os relatórios de background (BigDataCorp, Becompliance, Pipefy) listados no dossiê da Trace. A Declaração de Wallets é endereçada à Trace, e o título do Intex é a sua transmissão pela contraparte; a validação aqui registrada apoia-se na **compatibilidade com o screening independente**, e não na declaração isolada. Dados de filial, CNAE e datas de entrada de administradores vêm de fontes públicas secundárias e dependem de confirmação por ficha oficial. As estimativas estão marcadas com [E]. Não houve contato direto com a Alfa. Este parecer não constitui opinião sobre a regularidade da Alfa perante o BCB, nem substitui a análise principal da Trace."}
+      ]
+    }
+  ],
+  "pendencias": {
+    "assunto": "Diligência complementar Alfa — itens de acompanhamento",
+    "saudacao": "Prezados, boa tarde.",
+    "abertura": "Concluímos a revisão da diligência complementar sobre a Alfa. O fluxo está liberado. Restam os itens abaixo, que pedimos sejam encaminhados nos prazos indicados.",
+    "grupos": [
+      {"titulo": "Condicionante temporal (efeito suspensivo automático)", "itens": ["T1 — Comprovante de protocolo do pedido de autorização no BCB, com número e data, até 30/10/2026."]},
+      {"titulo": "Acompanhamento (até 30/11/2026)", "itens": [
+        "AC1 — TPV revisado à luz do volume observado na Binance e balancete auditado.",
+        "AC2 — Política de PLD/FT/PAM revisada, manual de monitoramento, AIR e evidências de execução (exemplos de CDD, alertas tratados, dossiês).",
+        "AC3 — Wallet attestation atualizado, incluindo a \"Hot Wallet 1\" e a rede Base, com segregação entre endereços de atribuição exclusiva e pool da exchange."
+      ]}
+    ],
+    "fecho": "Ficamos à disposição."
+  }
+}
