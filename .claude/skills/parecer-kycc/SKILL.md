@@ -92,6 +92,9 @@ Estrutura fixa, na ordem:
    volume, vigências).
 6. **4. Condicionantes**: 4.1 Suspensivas; 4.2 Temporal; 4.3 Acompanhamento (com prazo); 4.4
    Gatilhos de reavaliação imediata; revisão periódica. Omita o subitem que não tiver conteúdo.
+   **Cada condicionante termina com "*Por quê:*"** e um motivo curto, que se sustente sozinho: o
+   usuário lê esta seção isoladamente para decidir. Veja as regras em
+   `references/decisao-e-condicionantes.md` (motivo, previsibilidade, carteiras, corroboração).
 7. **5. Limitações**: base documental e datas de recebimento; **o que não foi disponibilizado**;
    fontes secundárias; o que é estimativa; que não houve contato com o analisado; que o parecer não é
    opinião sobre a regularidade dele perante o BCB nem substitui a análise principal da Trace.

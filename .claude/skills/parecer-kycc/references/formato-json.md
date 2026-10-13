@@ -65,5 +65,5 @@ Se presente, o script grava `<saida>_pendencias.md`, um e-mail pronto para a Tra
 }
 ```
 
-Os itens são pedidos concretos, endereçados à Trace (a contraparte), nunca ao cliente dela, e
+Cada item termina com o motivo em uma frase curta entre parênteses. Os itens são pedidos concretos, endereçados à Trace (a contraparte), nunca ao cliente dela, e
 dizem o que entregar e em que forma (documento, data-base, assinatura).
