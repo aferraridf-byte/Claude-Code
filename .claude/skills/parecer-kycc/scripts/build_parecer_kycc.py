@@ -48,10 +48,13 @@ def _rpr(bold=False, italic=False, color=TEXT, size=None):
     return "<w:rPr>" + "".join(p) + "</w:rPr>"
 
 
+_CTRL = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
+
+
 def runs(texto, color=TEXT, size=None, bold=False):
     """Converte **negrito** e *itálico* em runs."""
     out = []
-    texto = str(texto)
+    texto = _CTRL.sub("", str(texto))
     for tok in re.split(r"(\*\*.+?\*\*|\*[^*\s][^*]*?\*)", texto):
         if not tok:
             continue
@@ -123,7 +126,7 @@ def _cell(conteudo_xml, w, fill=None, borders=None, mar=(50, 90)):
 
 def _cell_text(texto, bold=False, color=TEXT):
     # Células aceitam lista de parágrafos ou texto com \n\n separando parágrafos.
-    blocos = texto if isinstance(texto, list) else str(texto).split("\n\n")
+    blocos = (texto if isinstance(texto, list) else str(texto).split("\n\n")) or [""]
     return "".join(
         f'<w:p><w:pPr><w:spacing w:after="30" w:line="236" w:lineRule="auto"/></w:pPr>'
         f"{runs(b, color, 16, bold)}</w:p>" for b in blocos)
@@ -278,20 +281,34 @@ def main():
         sys.exit("modelo alterado: placeholder {{CORPO}} ausente em assets/modelo_kycc.docx")
     open(doc, "w", encoding="utf-8").write(xml.replace("{{CORPO}}", corpo(c)))
     ftr = os.path.join(tmp, "word", "footer1.xml")
-    open(ftr, "w", encoding="utf-8").write(
-        open(ftr, encoding="utf-8").read().replace("{{NUMERO}}", escape(c["numero"])))
+    with open(ftr, encoding="utf-8") as f:  # ler antes de abrir para escrita (que trunca)
+        rodape = f.read()
+    if "{{NUMERO}}" not in rodape:
+        sys.exit("modelo alterado: placeholder {{NUMERO}} ausente no rodapé de assets/modelo_kycc.docx")
+    with open(ftr, "w", encoding="utf-8") as f:
+        f.write(rodape.replace("{{NUMERO}}", escape(c["numero"])))
 
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     if os.path.exists(out):
         os.remove(out)
+    arquivos = []
+    for raiz, _, arqs in os.walk(tmp):
+        for a in arqs:
+            arquivos.append(os.path.relpath(os.path.join(raiz, a), tmp))
+    arquivos.sort(key=lambda a: (a != "[Content_Types].xml", a))  # Content_Types primeiro
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-        for raiz, _, arqs in os.walk(tmp):
-            for a in arqs:
-                cam = os.path.join(raiz, a)
-                arc = os.path.relpath(cam, tmp)
-                # [Content_Types].xml primeiro, como o Word espera
-                z.write(cam, arc)
+        for arc in arquivos:
+            z.write(os.path.join(tmp, arc), arc)
     shutil.rmtree(tmp)
+    # Conferência mínima: toda parte XML do pacote precisa ser XML bem-formado e não vazio
+    import xml.dom.minidom
+    with zipfile.ZipFile(out) as z:
+        for nome in z.namelist():
+            if nome.endswith(".xml") or nome.endswith(".rels"):
+                try:
+                    xml.dom.minidom.parseString(z.read(nome))
+                except Exception as e:
+                    sys.exit(f"ERRO: {nome} inválido no .docx gerado ({e}); o Word não abriria.")
     print("docx:", out)
 
     pend = pendencias_md(c, os.path.splitext(out)[0] + "_pendencias.md")
