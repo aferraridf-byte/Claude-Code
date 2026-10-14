@@ -1,0 +1,14 @@
+{
+  "_comentario": "Copie para config.json (ou rode 'heygen.py configurar'). A chave da API NÃO vai aqui: fica na variável de ambiente HEYGEN_API_KEY.",
+  "avatar_id": "ID_DO_LOOK_DO_AVATAR",
+  "voice_id": null,
+  "engine": null,
+  "velocidade": 1.0,
+  "locale": null,
+  "fundo": null,
+  "remover_fundo": false,
+  "resolucao": "1080p",
+  "proporcao": "16:9",
+  "brand_glossary_id": null,
+  "pasta_projetos": "~/Videos/HeyGen"
+}
