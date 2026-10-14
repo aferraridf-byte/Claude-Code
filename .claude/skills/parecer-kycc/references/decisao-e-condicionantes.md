@@ -58,6 +58,9 @@ Regras:
 - **Previsibilidade regulatória**: antes do fim do prazo de protocolo, uma **declaração de intenção**
   (entidade, modalidade, data prevista) basta e é aceita até essa data; não exija carta de escritório
   nem comprovante. Depois do prazo, vale a T do protocolo.
+  Procure a declaração no próprio dossiê antes de pedi-la: costuma estar no formulário de onboarding
+  (Pipefy, campo de autorização BCB), no parecer da Trace ou na call. Cite onde está; se o usuário
+  disser que já a tem, confirme a fonte com ele em vez de supor um documento externo.
 - **Carteiras**: o atestado precisa cobrir **só os endereços que serão whitelistados e transacionados**
   com a liquidez do Intex. Não peça atestado de todas as carteiras do cliente; peça a confirmação de
   que a whitelist fica restrita aos endereços atestados e de que endereço novo só entra depois de
