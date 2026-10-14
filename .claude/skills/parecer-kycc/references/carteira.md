@@ -39,7 +39,12 @@ Sem nomes de pessoas físicas nem CPF: o painel mostra empresas, endereços e da
 
 ## Como atualizar
 
-1. Baixe os dados atuais do painel. Liste os arquivos com `Artifact` `action: "list"`,
+1. **Sempre** baixe os dados atuais do painel, mesmo que você tenha cópias locais desta sessão: outras
+   sessões e pessoas também atualizam o painel, e gravar uma cópia antiga apaga o trabalho delas.
+   Leia `datasets/carteira` e `datasets/condicionantes` com `ArtifactData` `get` (anote a `version`)
+   e baixe os arquivos da `source.url` de cada um com `Artifact` `action: "read"`, `path` = o id
+   depois de `/_blob/`. Aplique a mudança sobre esses arquivos.
+   (Alternativa antiga, só se o `get` falhar:) Liste os arquivos com `Artifact` `action: "list"`,
    `scope: "assets"` e a URL acima, e leia os de nome `carteira.json` e `condicionantes.json`
    mais recentes com `action: "read"` e `path` = id do asset. Ou leia antes os documentos
    `datasets/carteira` e `datasets/condicionantes` com `ArtifactData` `get`, que trazem a `url`
@@ -47,7 +52,7 @@ Sem nomes de pessoas físicas nem CPF: o painel mostra empresas, endereços e da
 2. Escreva o `registro.json` do cliente (formato acima) e rode
    `python <skill>/scripts/atualizar_carteira.py carteira.json condicionantes.json registro.json`.
 3. Suba os dois arquivos com `Artifact` (`url` do painel, `asset: true`, `file_path`).
-4. Com `ArtifactData` `batch`, atualize `datasets/carteira` e `datasets/condicionantes`
+4. Com `ArtifactData` `batch`, pinado nas versões lidas no passo 1, atualize `datasets/carteira` e `datasets/condicionantes`
    (`update` com `if_version` lido no passo 1): `source.url` com o novo `/_blob/...`,
    `source.name` e `updated: {at: <ISO agora>, by: "Claude, parecer <número>"}`.
 5. Não mexa em `files/index.html` para incluir cliente: a página lê tudo dos dados.
