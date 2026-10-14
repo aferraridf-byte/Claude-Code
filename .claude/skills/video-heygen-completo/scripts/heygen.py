@@ -119,7 +119,7 @@ def chave():
     k = os.environ.get("HEYGEN_API_KEY", "").strip()
     if not k:
         erro("a variável HEYGEN_API_KEY não está definida. Crie a chave em "
-             "app.heygen.com > Settings > API e defina no terminal (veja a skill, seção Configuração).")
+             "https://app.heygen.com/developers/api e defina no terminal (veja a skill, seção Configuração).")
     return k
 
 
@@ -273,8 +273,10 @@ def cmd_verificar(a):
     try:
         me = api("GET", "/v3/users/me")
         d = me.get("data", me)
-        resumo = {k: d.get(k) for k in ("email", "username", "plan", "remaining_credits",
-                                        "credits", "balance") if k in d}
+        resumo = {k: d.get(k) for k in ("email", "username", "billing_type") if k in d}
+        cobranca = d.get(d.get("billing_type") or "", None)
+        if isinstance(cobranca, dict):  # wallet / subscription / usage_based
+            resumo["saldo"] = {k: v for k, v in cobranca.items() if k != "auto_reload"}
         print("Chave HeyGen: OK", json.dumps(resumo, ensure_ascii=False) if resumo else "")
     except (RuntimeError, SystemExit) as e:
         ok = False

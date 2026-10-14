@@ -18,9 +18,10 @@ tema/briefing ─► [1] roteiro.json ─► (aprovação) ─► [2] HeyGen API
 
 ## Configuração (uma vez por máquina)
 
-1. **Chave da API.** O usuário cria a chave em app.heygen.com > Settings > API e grava na variável de ambiente `HEYGEN_API_KEY`, **digitando ele mesmo no terminal**. Nunca peça para colar a chave no chat, nunca a escreva em arquivo do projeto e nunca a mostre em comando.
+1. **Chave da API.** O usuário cria a chave em https://app.heygen.com/developers/api (permissão completa, ou personalizada com escrita em vídeos e leitura em avatares, vozes e usuário) e grava na variável de ambiente `HEYGEN_API_KEY`, **digitando ele mesmo no terminal**. Nunca peça para colar a chave no chat, nunca a escreva em arquivo do projeto e nunca a mostre em comando.
    - macOS/Linux: acrescentar `export HEYGEN_API_KEY="..."` ao `~/.zshrc` ou `~/.bashrc` e abrir um terminal novo.
    - Windows: `setx HEYGEN_API_KEY "..."` e abrir um terminal novo.
+   - Sessão na nuvem (claude.ai/code): a chave entra como variável de ambiente nas configurações do ambiente (menu do ambiente na barra de título > Edit), e a rede precisa liberar `api.heygen.com` e `heygen.ai` (downloads). Vale a partir da próxima sessão.
    - A cobrança da API é separada da assinatura do site. Se `verificar` mostrar saldo zero, avise o usuário.
 2. **Avatar e voz:**
    ```bash
