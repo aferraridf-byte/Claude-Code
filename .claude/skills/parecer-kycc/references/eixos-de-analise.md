@@ -43,7 +43,9 @@ Um dossiê completo, enviado pela Trace, costuma trazer:
 | Regulatório | Recibos/listagem de entregas IN RFB 1.888 ou DeCripto (IN RFB 2.291/2025), declaração de intenção de pedido de autorização |
 | Comunicação | E-mails de pendência entre a Trace e o cliente, transcrição de call de compliance |
 
-Use o inventário (`scripts/inventario.py`) para saber o que chegou. O que **faltar** e for
+Use o inventário (`scripts/inventario.py`) para saber o que chegou e `scripts/buscar_dossie.py` para
+confirmar uma falta antes de escrevê-la: uma informação pode estar dentro de outra peça (o Pipefy
+traz a intenção de protocolo; o parecer da Trace registra declarações do cliente). O que **faltar** e for
 relevante vira limitação (seção 5) e, se for decisivo, condicionante. Relatórios citados pela Trace
 mas não compartilhados com o Intex são uma falta: registre que "os relatórios-fonte não foram
 compartilhados".

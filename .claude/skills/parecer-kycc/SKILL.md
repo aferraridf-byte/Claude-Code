@@ -130,13 +130,32 @@ usuário quando isso ocorrer e recomende gerar o PDF final pelo Word.
 
 ### 6. Conferir
 
+**Afirmações de ausência primeiro.** Os erros mais caros são afirmações de que algo "não veio",
+"não está documentado" ou "só foi dito verbalmente" quando a peça estava no dossiê. Uma busca
+falhada desmente o parecer inteiro diante da Trace. Antes de gerar a versão final:
+
+```bash
+python <skill>/scripts/revisar_conteudo.py negativas conteudo.json
+python <skill>/scripts/buscar_dossie.py <trabalho>/inv termo1 termo2 ...
+```
+
+O primeiro lista toda frase de ausência ou negação do parecer. Para cada uma que trate de
+documento, declaração, registro ou evidência, rode o segundo com o termo e sinônimos (ex.:
+protocolo, "pedido de autoriza", Demarest, outubro). Lembre que formulários (Pipefy) e o parecer da
+Trace também são fonte escrita. Se a busca achar algo, corrija a frase. Se não achar, confira as
+peças de leitura VISUAL antes de manter a ausência.
+
+Depois, o visual:
+
 ```bash
 pdftoppm -r 60 -png <saida>/Parecer_KYCC_<...>.pdf pg
 ```
 
 Olhe as páginas: ficha e veredito na primeira, tabela de achados legível, nada cortado, assinatura
 no fim. Releia o texto como o regulador leria: cada afirmação tem fonte? cada número fecha? cada
-condicionante diz o que, como e até quando?
+condicionante diz o que, como e até quando? O mesmo fato aparece em vários lugares (resumo, tabela
+de achados, quadro de vigências, subseção, condicionante, limitações, e-mail): eles dizem a mesma
+coisa?
 
 ### 7. Entregar
 
@@ -156,3 +175,35 @@ Quando o usuário trouxer resposta da Trace às condicionantes ou fato novo: lei
 (o .docx dele, se houver), aplique a regra de versões de `references/decisao-e-condicionantes.md`,
 preserve os IDs de achados e condicionantes, marque o que foi cumprido com data, e reavalie o
 veredito. Se a resposta só atende formalmente (ex.: declaração sem evidência), diga isso.
+
+### O que o usuário diz no chat não é documento
+
+Quando o usuário afirmar algo sobre o caso ("já temos a declaração", "isso foi enviado", "eles
+confirmaram por telefone"), não transforme a frase em fato documental nem invente de onde ele veio.
+Faça nesta ordem:
+
+1. Procure no dossiê com `buscar_dossie.py`. Se achar, cite a peça.
+2. Se não achar, pergunte ao usuário qual é a fonte (documento, e-mail, data) antes de escrever.
+3. Se ele não tiver documento, registre como "informado pelo Intex em DD/MM/AAAA", sem atribuir
+   forma, autor ou data que ele não deu.
+
+Uma afirmação do usuário que contradiz o parecer é sinal de que o parecer pode ter errado: verifique
+antes de só acomodar a frase.
+
+### Corrigir um fato em todo o parecer
+
+Uma correção tem de chegar a **todas** as ocorrências do fato. Antes de editar, localize-as:
+
+```bash
+python <skill>/scripts/revisar_conteudo.py localizar conteudo.json "verbal" "declaração" ...
+```
+
+Aplique as trocas com o mesmo script, que não quebra o JSON e falha se algum trecho não for
+encontrado. O terceiro campo de cada troca é a lista de termos para reconferir depois:
+
+```bash
+python <skill>/scripts/revisar_conteudo.py substituir conteudo.json trocas.json conteudo_v2.json
+```
+
+Não edite o JSON com substituição de texto sobre o arquivo serializado: aspas dentro do texto quebram
+o JSON. Rode de novo o passo 6 inteiro depois de qualquer correção.
