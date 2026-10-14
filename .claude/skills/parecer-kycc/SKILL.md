@@ -165,7 +165,7 @@ copie para `/mnt/user-data/outputs/` e use `present_files`). Na resposta, poucas
 - os 3 pontos que mais pesaram;
 - as condicionantes suspensivas e a temporal;
 - as peças que faltaram ou que você não conseguiu ler;
-- o e-mail de pendências: cole o texto se tiver até ~8 itens; acima disso, aponte o `_pendencias.md`;
+- o e-mail à Trace (`_pendencias.md`), no padrão de `references/mensagem-trace.md`: curto, por blocos, sem motivo item a item;
 - o que depende de decisão interna do Intex (ex.: leitura do art. 91) e o número do parecer, se
   usou 001 sem saber se havia versão anterior.
 

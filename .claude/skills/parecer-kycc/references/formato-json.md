@@ -49,21 +49,22 @@ Larguras de referência (pesos) usadas no modelo:
 
 ## Pendências (`pendencias`)
 
-Se presente, o script grava `<saida>_pendencias.md`, um e-mail pronto para a Trace:
+Se presente, o script grava `<saida>_pendencias.md`, o e-mail à Trace no padrão de
+`references/mensagem-trace.md` (leia antes de escrever):
 
 ```json
 "pendencias": {
-  "assunto": "Diligência complementar <Objeto> — documentos e esclarecimentos",
-  "saudacao": "Prezados, boa tarde.",
-  "abertura": "Uma ou duas frases: o que foi analisado e qual a situação do fluxo.",
+  "assunto": "RE: <assunto do fio de e-mail com a Trace>",
+  "saudacao": "Prezados, boa tarde. Tudo bem?",
+  "abertura": "Um parágrafo: o que foi feito, o resultado e o que já foi aceito.",
   "grupos": [
-    {"titulo": "Antes da liberação do fluxo (suspensivas)", "itens": ["S1 — ...", "S2 — ..."]},
-    {"titulo": "Prazo regulatório", "itens": ["T1 — ..."]},
-    {"titulo": "Acompanhamento (até DD/MM/AAAA)", "itens": ["AC1 — ..."]}
+    {"titulo": "Whitelist (condição para liberação)", "texto": "Uma frase, quando o bloco é um pedido só."},
+    {"titulo": "Autorização no BCB", "itens": ["comprovante do protocolo ...", "até 05/11/2026, a situação do processo ..."], "nota": "Na falta desses itens, o fluxo é suspenso nas respectivas datas."},
+    {"titulo": "Documentação complementar (até DD/MM/AAAA)", "itens": ["...", "..."]}
   ],
-  "fecho": "Ficamos à disposição."
+  "fecho": ["Preferencialmente, os documentos em PDF. Ficamos à disposição para uma breve call caso haja dúvidas sobre o escopo.", "Atenciosamente,"]
 }
 ```
 
-Cada item termina com o motivo em uma frase curta entre parênteses. Os itens são pedidos concretos, endereçados à Trace (a contraparte), nunca ao cliente dela, e
-dizem o que entregar e em que forma (documento, data-base, assinatura).
+Os blocos são numerados pelo script. Sem motivo item a item: os motivos ficam no parecer.
+A assinatura padrão é acrescentada ao fim.

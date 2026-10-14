@@ -241,24 +241,33 @@ def corpo(c):
 
 
 def pendencias_md(c, destino):
+    """E-mail à Trace no padrão de references/mensagem-trace.md."""
     p = c.get("pendencias")
     if not p:
         return None
-    linhas = [f"Assunto: {p.get('assunto', 'Pendências — diligência complementar ' + c.get('objeto_curto', ''))}", ""]
-    if p.get("saudacao"):
-        linhas += [p["saudacao"], ""]
+    linhas = [f"Assunto: {p.get('assunto', 'Diligência complementar ' + c.get('objeto_curto', ''))}", ""]
+    linhas += [p.get("saudacao", "Prezados, boa tarde. Tudo bem?"), ""]
     if p.get("abertura"):
         linhas += [p["abertura"], ""]
-    for grupo in p.get("grupos", []):
-        linhas.append(grupo["titulo"])
-        for it in grupo["itens"]:
-            linhas.append(f"- {it}")
+    for n, g in enumerate(p.get("grupos", []), 1):
+        linhas.append(f"{n}. {g['titulo']}")
+        if g.get("texto"):
+            linhas.append(g["texto"])
+        itens = g.get("itens", [])
+        for i, it in enumerate(itens):
+            it = it.rstrip(" ;.")
+            linhas.append(f"- {it}{'.' if i == len(itens) - 1 else ';'}")
+        if g.get("nota"):
+            linhas.append(g["nota"])
         linhas.append("")
-    if p.get("fecho"):
-        linhas += [p["fecho"], ""]
-    linhas.append(f"Ref.: {c['numero']}")
+    fecho = p.get("fecho", ["Preferencialmente, os documentos em PDF. Ficamos à disposição para uma breve "
+                            "call caso haja dúvidas sobre o escopo.", "Atenciosamente,"])
+    for f in (fecho if isinstance(fecho, list) else [fecho]):
+        linhas += [f, ""]
+    a = {**ASSINATURA_PADRAO, **(c.get("assinatura") or {})}
+    linhas += [a["nome"], a["cargo"], a["instituicao"]]
     with open(destino, "w", encoding="utf-8") as f:
-        f.write("\n".join(linhas).replace("**", ""))
+        f.write("\n".join(linhas).replace("**", "") + "\n")
     return destino
 
 
