@@ -55,6 +55,9 @@ Regras:
   vez de documento), diga isso em uma frase ("a Trace pediu o PDF em 10/09 e recebeu outro print").
   Se o pedido seria dispensável em condições normais, diga ("seria desnecessária se a política
   estivesse revisada"). Os gatilhos e a revisão periódica também levam um "Por quê" de uma linha.
+- **Protocolo (regra do Intex)**: a T do protocolo pede o comprovante (número, data e modalidade)
+  **enviado ao Intex até 30/10/2026**; sem ele, o fluxo é **suspenso em 02/11/2026**. Vale para todos
+  os clientes do fluxo indireto. Se o BCB mudar o prazo do art. 88, as duas datas acompanham.
 - **Previsibilidade regulatória**: antes do fim do prazo de protocolo, uma **declaração de intenção**
   (entidade, modalidade, data prevista) basta e é aceita até essa data; não exija carta de escritório
   nem comprovante. Depois do prazo, vale a T do protocolo.
