@@ -58,6 +58,11 @@ Regras:
 - **Protocolo (regra do Intex)**: a T do protocolo pede o comprovante (número, data e modalidade)
   **enviado ao Intex até 30/10/2026**; sem ele, o fluxo é **suspenso em 02/11/2026**. Vale para todos
   os clientes do fluxo indireto. Se o BCB mudar o prazo do art. 88, as duas datas acompanham.
+- **Documentação complementar só depois do protocolo**: os acompanhamentos (AC) que pedem
+  documentos não vão no primeiro e-mail à Trace. Eles são pedidos quando chegar o comprovante de
+  protocolo; no parecer, o título do 4.3 diz isso, e só fica com data própria o AC que precisa ser
+  resolvido antes do protocolo (ex.: custódia × modalidade pedida). O e-mail termina avisando que a
+  relação de documentos complementares será enviada após o comprovante.
 - **Previsibilidade regulatória**: antes do fim do prazo de protocolo, uma **declaração de intenção**
   (entidade, modalidade, data prevista) basta e é aceita até essa data; não exija carta de escritório
   nem comprovante. Depois do prazo, vale a T do protocolo.

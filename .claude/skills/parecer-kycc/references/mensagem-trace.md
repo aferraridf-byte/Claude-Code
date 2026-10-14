@@ -22,6 +22,14 @@ enviar, em que forma e até quando.
    sinalizem para alinharmos a forma de envio." Depois: "Ficamos à disposição para uma breve call
    caso haja dúvidas sobre o escopo." e "Atenciosamente,", com a assinatura.
 
+## Primeiro e-mail × documentação complementar
+
+O primeiro e-mail traz só o que libera o fluxo, os prazos regulatórios e o que precisa ser resolvido
+antes do protocolo. A documentação complementar (extratos, política, evidências, DF auditadas,
+background) é pedida num segundo e-mail, depois que a Trace enviar o comprovante de protocolo. No
+fecho do primeiro: "A relação de documentos complementares será encaminhada após o recebimento do
+comprovante de protocolo."
+
 ## O que não vai no e-mail
 
 - A classificação de risco do Intex, a divergência com a Trace e os achados: são internos.
