@@ -169,6 +169,13 @@ copie para `/mnt/user-data/outputs/` e use `present_files`). Na resposta, poucas
 - o que depende de decisão interna do Intex (ex.: leitura do art. 91) e o número do parecer, se
   usou 001 sem saber se havia versão anterior.
 
+### 8. Atualizar a Carteira KYCC
+
+Todo cliente com parecer emitido entra no painel **Carteira KYCC** do Intex, com veredito, risco,
+TPV, whitelist e condicionantes com prazo e motivo. Isso vale também para revisões e para
+condicionantes cumpridas. O procedimento, o formato do registro e o link estão em
+`references/carteira.md`. Na resposta ao usuário, uma linha: "Carteira KYCC atualizada" com o link.
+
 ## Revisão de parecer
 
 Quando o usuário trouxer resposta da Trace às condicionantes ou fato novo: leia o parecer anterior
