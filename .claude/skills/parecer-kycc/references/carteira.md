@@ -20,6 +20,18 @@ cliente (veredito, risco, TPV, protocolo, whitelist, pontos de atenção e condi
 Pergunte ao usuário antes de incluir só se o veredito for ambíguo. Nos demais casos, inclua e
 avise em uma linha, com o link.
 
+## O que entra como condicionante no painel
+
+O painel é de **acompanhamento**: entra só o que foi **efetivamente pedido à Trace** (o que está no
+e-mail enviado, ou no parecer já comunicado), com o prazo dado a ela. Não entram:
+- acompanhamentos ainda não pedidos (ex.: documentação complementar que só será pedida depois do
+  protocolo): entram quando o segundo e-mail for enviado;
+- controles internos do Intex: revisão periódica (a data fica só no campo `proxima_revisao` da
+  ficha), leitura interna do art. 91, gatilhos;
+- nada que o parecer recomende sem ter virado pedido.
+
+Na dúvida se algo foi pedido, confira o texto do e-mail enviado ou pergunte ao usuário.
+
 ## Formato
 
 Linha da carteira (todos os campos, `""` quando não houver):
@@ -32,7 +44,7 @@ Linha da carteira (todos os campos, `""` quando não houver):
 pontos de atenção, um por linha).
 
 Condicionante: `codigo` (como no parecer), `tipo` ("Suspensiva", "Temporal", "Acompanhamento"
-ou "Revisão"), `titulo` (o pedido em poucas palavras), `prazo` (AAAA-MM-DD ou ""), `status`
+), `titulo` (o pedido como foi feito à Trace, em poucas palavras), `prazo` (AAAA-MM-DD ou ""), `status`
 ("Pendente" ou "Atendida") e `motivo` (o "Por quê" em uma frase).
 
 Sem nomes de pessoas físicas nem CPF: o painel mostra empresas, endereços e datas.

@@ -16,7 +16,7 @@ CAMPOS = ["id", "cliente", "razao_social", "cnpj", "psav", "parecer", "versao", 
           "veredito", "risco_intex", "risco_origem", "tpv_declarado", "tpv_aprovado", "volume_observado",
           "protocolo_previsto", "proxima_revisao", "whitelist", "pontos"]
 FLUXOS = {"Liberado", "Aguardando condicionante", "Suspenso", "A confirmar"}
-TIPOS = {"Suspensiva", "Temporal", "Acompanhamento", "Revisão"}
+TIPOS = {"Suspensiva", "Temporal", "Acompanhamento"}  # só pedidos feitos à Trace; revisão fica na ficha
 STATUS = {"Pendente", "Atendida"}
 
 
